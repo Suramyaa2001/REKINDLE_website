@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Research: REKINDLE</title>
+<meta name="description" content="The four research modules of REKINDLE.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600;6..72,700&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="site-top"></div>
+<main>
+
+<section class="page-head"><div class="wrap">
+  <h1>Research</h1>
+  <p class="lede">Four modules follow one chain, from the burned hillside to the decision about where to invest. Each module hands its results to the next, and later results feed back to improve earlier ones.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <ol class="modules">
+    <li><div><h3>1. Hazard risk</h3><p class="who">Leads: Auroop Ganguly (Northeastern), Andre Coleman (PNNL)</p></div><div>
+      <p>We build a wildfire knowledge graph that encodes known links between fire drivers, and use it to guide a geospatial transformer model that fuses satellite, weather and terrain data at several resolutions. The model predicts wildfire probability and burn severity.</p>
+      <p>Those outputs feed hydrologic and debris-flow models under design storms. The result is compound hazard risk maps with uncertainty bounds that say where the estimates are firm and where they are not.</p>
+      <p class="hypo">Question: what multi-scale environmental drivers govern wildfires, how do they trigger post-fire hazards, and how do the risks evolve?</p></div></li>
+    <li><div><h3>2. Infrastructure risk</h3><p class="who">Leads: Marta González (UC Berkeley), Sayanti Mukherjee (UB)</p></div><div>
+      <p>We model power, transportation and water systems as connected networks, working with utilities and agencies to identify how they depend on each other. Where data is scarce or proprietary, graph machine learning helps infer missing network structure.</p>
+      <p>We then simulate how compound wildfire hazards cause cascading failures, producing maps of which components are most susceptible and where service would degrade.</p>
+      <p class="hypo">Question: how do compound wildfire scenarios produce cascading failures across interdependent lifelines?</p></div></li>
+    <li><div><h3>3. Societal risk</h3><p class="who">Leads: Susan Spierre Clark (UB), Anna Serra-Llobet (UC Berkeley)</p></div><div>
+      <p>Using the capabilities approach, we measure how lifeline disruptions limit what households can do and be, and what they spend in time and money to cope. Household surveys, focus groups and role-playing simulation games capture both common and rarely experienced compound events.</p>
+      <p>The results become social burden maps and a compound index that reflects community priorities.</p>
+      <p class="hypo">Question: how do cascading disruptions affect households' adaptive capacity, recovery and risk perceptions?</p></div></li>
+    <li><div><h3>4. Resilience decisions</h3><p class="who">Leads: Samrat Chatterjee (PNNL), Sayanti Mukherjee (UB)</p></div><div>
+      <p>Working with stakeholders, we build multi-level optimization models that choose pre-fire hardening and post-fire recovery strategies. Household burden from Module 3 is an explicit objective, not an afterthought, and uncertainty from Modules 1 and 2 carries through.</p>
+      <p>AI-assisted methods help these models scale to realistic regional networks.</p>
+      <p class="hypo">Question: how can we design robust, community-scale strategies that reduce societal costs across many stakeholders?</p></div></li>
+  </ol>
+</div></section>
+
+<section class="block"><div class="wrap split">
+  <div><h2>Working with partners</h2>
+  <p>REKINDLE is co-produced with the people who plan for and live with wildfire risk. An annual workshop, quarterly communities of practice and stakeholder interviews shape the scenarios we study, the assumptions we make and how we judge the strategies we recommend.</p></div>
+  <div><h2>Sharing what we learn</h2>
+  <p>Educational materials, research data and code will be made publicly available so others can build on the work. See <a href="outreach.html">Outreach</a> for workshops, webinars and education plans.</p></div>
+</div></section>
+
+</main>
+<div id="site-bottom"></div>
+<script src="assets/data.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>
