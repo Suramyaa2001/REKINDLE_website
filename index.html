@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>REKINDLE: wildfire hazards and resilient lifelines</title>
+<meta name="description" content="REKINDLE is a National Science Foundation project on the cascading disasters that follow wildfires.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="site-top"></div>
+<main>
+
+<section class="stage">
+  <div class="screen">
+    <!-- PROJECT VIDEO: save your video as assets/project-video.mp4 and it plays here. Until then this space stays empty. -->
+    <video id="hero-video" autoplay muted loop playsinline preload="metadata" aria-label="REKINDLE project video"><source src="assets/project-video.mp4" type="video/mp4"></video>
+    <button class="sound" id="sound" type="button" aria-pressed="false" hidden>Sound on</button>
+    <h1 class="tagline">When the fire is out, the disaster is only starting.</h1>
+  </div>
+</section>
+
+<section class="funding"><div class="wrap">
+  <p>Funded by the National Science Foundation, Fire Science Innovations through Research and Education (FIRE) program. NSF awards <span class="award-numbers"></span>.</p>
+  <p class="insts">University at Buffalo (lead institution), University of California, Berkeley, Northeastern University and Pacific Northwest National Laboratory</p>
+  <p class="credit">Video: Tim McCune (CC BY 2.0), U.S. Coast Guard, Federal Emergency Management Agency, U.S. Geological Survey (all public domain) and Arnav Kainthola via Pexels.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Latest news</h2>
+  <ul class="feed" id="news-latest"></ul>
+  <p style="margin-top:1.2rem"><a href="news.html">All news &rsaquo;</a></p>
+</div></section>
+
+<section class="block"><div class="wrap split">
+  <div><h2>Work with us</h2>
+  <p>We welcome students in industrial and systems engineering, civil engineering, data science, operations research and the social sciences. We also want to hear from emergency managers, utilities, agencies and community groups in fire-prone regions.</p></div>
+  <div><p><a class="btn primary" href="contact.html">Contact the team</a></p></div>
+</div></section>
+
+</main>
+<div id="site-bottom"></div>
+<script src="assets/data.js"></script>
+<script src="assets/site.js"></script>
+<script>
+(function(){var v=document.querySelector(".screen video");if(!v)return;var s=v.querySelector("source");
+function gone(){if(v.parentNode)v.parentNode.removeChild(v);}
+v.addEventListener("playing",function(){v.parentNode.classList.add("playing");var b=document.getElementById("sound");if(b)b.hidden=false;});
+var sb=document.getElementById("sound");
+if(sb)sb.addEventListener("click",function(){v.muted=!v.muted;if(!v.muted)v.play();sb.textContent=v.muted?"Sound on":"Sound off";sb.setAttribute("aria-pressed",String(!v.muted));});
+s.addEventListener("error",gone);v.addEventListener("error",gone);})();
+</script>
+</body>
+</html>

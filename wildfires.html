@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wildfire data: REKINDLE</title>
+<meta name="description" content="Current wildfires, this year's burned acres and federal recovery assistance in the United States, read live from the National Interagency Fire Center and FEMA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="site-top"></div>
+<main>
+
+<section class="page-head"><div class="wrap">
+  <h1>Wildfire data</h1>
+  <p class="lede">Current fires, this year's burned acres and federal recovery assistance in the United States. The numbers are read from the National Interagency Fire Center (NIFC) and FEMA each time the page loads.</p>
+  <p class="lede" style="margin-top:.8rem;font-size:1rem">This page is for context and research, not for emergencies. For evacuation orders and safety information, contact your local emergency management office.</p>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Fires NIFC lists as current</h2>
+  <p id="now-summary" class="muted">Loading current incidents from NIFC.</p>
+  <label class="toggle"><input type="checkbox" id="show-contained"> Include incidents reported as 100% contained</label>
+  <div class="map-wrap">
+    <div id="map" role="img" aria-label="Map of the United States with a circle for each current wildfire incident. Circle size shows reported acres. The table below lists the largest incidents."></div>
+    <div id="tip" class="tip" hidden></div>
+  </div>
+  <ul class="legend" aria-label="Map key">
+    <li><i style="background:#C8341A"></i>Under 50% contained</li>
+    <li><i style="background:#F0A92A"></i>50% to 99% contained</li>
+    <li><i style="background:#8A7B73"></i>100% contained</li>
+    <li><i class="ring"></i>Containment not reported</li>
+    <li class="muted">Circle size shows reported acres</li>
+  </ul>
+  <h3 style="margin-top:2rem">Largest incidents shown</h3>
+  <div class="tbl-wrap"><table class="tbl" id="incident-table"><thead><tr><th>Incident</th><th>State</th><th>County</th><th class="num">Acres</th><th class="num">Contained</th><th>Discovered</th></tr></thead><tbody></tbody></table></div>
+  <p class="source" id="now-source"></p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2 id="ytd-title">This year so far</h2>
+  <div class="split">
+    <div>
+      <h3>Burned acres by state</h3>
+      <p id="ytd-summary" class="muted">Loading.</p>
+      <div id="chart-acres" class="chart"></div>
+      <p class="source">Source: NIFC, WFIGS Interagency Fire Perimeters, year to date (wildfires only). Acres come from mapped perimeters and are assigned to the state where each fire started. They can differ from the totals in NIFC's National Fire News.</p>
+    </div>
+    <div>
+      <h3>FEMA fire declarations by state</h3>
+      <p id="fema-summary" class="muted">Loading.</p>
+      <div id="chart-fema" class="chart"></div>
+      <ul class="legend" aria-label="Chart key">
+        <li><i style="background:#F0A92A"></i>Fire Management Assistance (FM)</li>
+        <li><i style="background:#C8341A"></i>Major disaster (DR)</li>
+        <li><i style="background:#6B4A3A"></i>Emergency (EM)</li>
+      </ul>
+      <p class="source">Source: FEMA, OpenFEMA Disaster Declarations Summaries, incident type Fire. Each bar counts declarations, not fires. A fire management assistance declaration helps pay firefighting costs. A major disaster declaration can open recovery assistance, and an emergency declaration supports the immediate response.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>Recovery assistance after major fire disasters</h2>
+  <p id="recovery-summary" class="muted">Loading.</p>
+  <div class="tbl-wrap"><table class="tbl" id="recovery-table"><thead><tr><th>Declaration</th><th>Title</th><th>Declared</th><th>Designated areas</th><th class="num">Individuals and Households Program approved</th><th class="num">Public assistance obligated</th></tr></thead><tbody></tbody></table></div>
+  <p class="source">Source: FEMA, OpenFEMA Disaster Declarations Summaries and FEMA Web Disaster Summaries. Dollar amounts are federal assistance that FEMA has recorded as approved (Individuals and Households Program, for households) or obligated (Public Assistance, for public facilities and infrastructure). They do not show how much rebuilding is finished. "Not reported" means FEMA has no figure for that program in these datasets.</p>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <h2>Cascading effects after a fire</h2>
+  <p>This page does not draw live data on what happens after a fire, such as debris flows, damaged roads, water systems and power outages. These agencies publish that information themselves.</p>
+  <ul class="links">
+    <li><a href="https://www.usgs.gov/programs/landslide-hazards/science/postfire-debris-flow-hazard-maps">U.S. Geological Survey: post-fire debris-flow hazard maps</a><br>An interactive dashboard of debris-flow hazard assessments for recently burned areas: likelihood, volume and combined hazard.</li>
+    <li><a href="https://www.fs.usda.gov/naturalresources/watershed/burnedareas.shtml">U.S. Forest Service: Burned Area Emergency Response</a><br>The Forest Service program that addresses post-fire risks on Forest Service lands, such as risks to visitors, property, water quality and natural and cultural resources.</li>
+    <li><a href="https://inciweb.wildfire.gov">InciWeb</a><br>The interagency incident information system, with a page for individual fires.</li>
+    <li><a href="https://nifc.gov/fire-information/nfn">NIFC: National Fire News</a><br>The national fire situation, published by the National Interagency Fire Center.</li>
+    <li><a href="https://impact.ornl.gov/en/datasets/eagle-i-power-outage-data-2025/">Oak Ridge National Laboratory: EAGLE-I power outage data, 2025</a><br>County-level outage counts recorded at 15-minute intervals, gathered from utilities' public outage maps.</li>
+  </ul>
+</div></section>
+
+<section class="block alt"><div class="wrap">
+  <h2>About this data</h2>
+  <p>The REKINDLE team does not edit these numbers. Each figure is read from the agency's public data service when you open the page, and the map refreshes every 10 minutes while the page stays open. Agencies update and correct their records, so values can change.</p>
+  <p>NIFC's current-incident list includes fires that are fully contained until they drop off the list, which is why the map hides them unless you choose to include them. Some incidents have no reported size or containment. A fire that crosses a state line is counted in the state where it started. Incidents outside the 50 states and Washington, D.C. are listed in the table but not placed on the map.</p>
+  <p>If a chart does not load, the agency's service may be busy or offline. Try again later or use the source links under each section.</p>
+</div></section>
+
+</main>
+<div id="site-bottom"></div>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/site.js"></script>
+<script src="assets/wildfires.js"></script>
+</body>
+</html>
